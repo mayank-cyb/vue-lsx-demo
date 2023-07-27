@@ -11,7 +11,7 @@ export default {
     data() {
         return {
             fill: 5,
-            intervalId
+            intervalId: null
         }
     },
     watch: {

@@ -38,7 +38,6 @@ export default {
     },
     computed: {
         queuedCustomers() {
-            console.log(this.printData.filter(customer => customer.isQueued));
             return this.printData.filter(customer => customer.isQueued);
         }
     },

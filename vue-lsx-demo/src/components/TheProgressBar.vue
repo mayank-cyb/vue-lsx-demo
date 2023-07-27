@@ -5,20 +5,20 @@
 </template>
 
 <script>
-let intervalId = '';
 export default {
     name: 'TheProgressBar',
     emits: ['send-fill-status'],
     data() {
         return {
             fill: 5,
+            intervalId
         }
     },
     watch: {
         fill(newValue) {
             if(newValue > 100) {
                 this.fill = 100;
-                clearInterval(intervalId);
+                clearInterval(this.intervalId);
             }
         }
     },
@@ -27,9 +27,9 @@ export default {
     },
     methods: {
         updateFill() {
-            intervalId = setInterval(() => { 
+            this.intervalId = setInterval(() => { 
                 this.fill < 100 ? this.fill += 15 : this.fill = 100;
-                console.log(this.fill)
+                console.log(this.fill);
                 this.$emit('send-fill-status', {
                     fill: this.fill
                 });
@@ -38,8 +38,8 @@ export default {
 
     },
     unmounted() {
-        console.log("unmounted", intervalId);
-        clearInterval(intervalId);
+        console.log("unmounted", this.intervalId);
+        clearInterval(this.intervalId);
     }
 }
 </script>

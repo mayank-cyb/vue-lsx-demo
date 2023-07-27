@@ -1,0 +1,12 @@
+.progress-bar {
+    width: 8rem;
+    border: 1px solid black;
+    height: 0.25rem;
+    overflow: hidden;
+}
+
+.progress {
+    width: 50%;
+    background-color: red;
+    height: 0.25rem;
+}

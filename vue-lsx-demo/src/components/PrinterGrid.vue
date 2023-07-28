@@ -32,9 +32,20 @@ export default {
         fill: 0
       }
     },
-    mounted() {
-      console.log("printers", this.allocatedPrinters); 
+    created() {
+        //console.log("In created PrinterGrid", this.$el);
+        //console.log("printers", this.allocatedPrinters); 
     },
+    mounted() {
+        //console.log("In mounted PrinterGrid", this.$el);
+        console.log("printers", this.allocatedPrinters); 
+    },
+    beforeUpdate() {
+        //console.log("In beforeupdated PrinterGrid", this.$el);
+    },
+    // updated() {
+    //     console.log("In updated PrinterGrid", this.$el);
+    // },
     props: {
         allocatedPrinters: {
             type: Array,
@@ -50,10 +61,13 @@ export default {
             });
         },
         clickHandler() {
-        console.log("clicked");
-    }
+            console.log("clicked");
+        }
     },
-
+    unmounted() {
+        console.log("unmounted PrinterGrid.vue");
+        clearInterval(this.intervalId);
+    }
 }
 </script>
 

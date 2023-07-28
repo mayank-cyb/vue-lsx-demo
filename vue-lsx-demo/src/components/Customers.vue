@@ -29,7 +29,6 @@ export default {
     },
     computed: {
         waitingCustomers() {
-            console.log(this.printData.filter(customer => !customer.isQueued));
             return this.printData.filter(customer => !customer.isQueued);
         },
         noWaitingCustomers() {

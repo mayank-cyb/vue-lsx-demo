@@ -19,6 +19,10 @@ export default {
             required: false,
         }
     },
+    unmounted() {
+        //console.log("unmounted Printer.vue");
+        clearInterval(this.intervalId);
+    }
 }
 </script>
 

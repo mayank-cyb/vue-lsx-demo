@@ -89,7 +89,6 @@ export default {
             } else {
                 this.status = 100;
             }
-            
             return this.status;
         }
     },

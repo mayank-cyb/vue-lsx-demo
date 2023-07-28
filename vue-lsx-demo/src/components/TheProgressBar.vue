@@ -18,6 +18,7 @@ export default {
         fill(newValue) {
             if(newValue > 100) {
                 this.fill = 100;
+                //console.log(this.fill);
                 clearInterval(this.intervalId);
             }
         }
@@ -29,7 +30,7 @@ export default {
         updateFill() {
             this.intervalId = setInterval(() => { 
                 this.fill < 100 ? this.fill += 15 : this.fill = 100;
-                console.log(this.fill);
+                //console.log(this.fill);
                 this.$emit('send-fill-status', {
                     fill: this.fill
                 });
@@ -38,7 +39,7 @@ export default {
 
     },
     unmounted() {
-        console.log("unmounted", this.intervalId);
+        console.log("unmounted progressbar", this.intervalId);
         clearInterval(this.intervalId);
     }
 }

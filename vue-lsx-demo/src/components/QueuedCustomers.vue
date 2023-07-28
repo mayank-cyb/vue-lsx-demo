@@ -8,7 +8,7 @@
             <Customer 
                 :cardData="customer"
                 :fill="fill"
-                isQueued="true"
+                :isQueued="true"
             >
                 <template #queuedCustomer>
                     <PrinterGrid :allocatedPrinters="customer.allocatedPrinters" @send-fill-status="sendFillToCustomer" />
@@ -44,11 +44,15 @@ export default {
     methods: {
         sendFillToCustomer({fill}) {
             this.fill= fill;
-            console.log("In QueuedCustomer.vue", fill);
+            //console.log("In QueuedCustomer.vue", fill);
             this.$emit('send-fill-status', {
                 fill
             });
         }
+    },
+    unmounted() {
+        console.log("unmounted QueuedCustomers.vue");
+        clearInterval(this.intervalId);
     }
 
 }

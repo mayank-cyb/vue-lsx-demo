@@ -12,6 +12,7 @@
 .customer  {
     margin: 0 auto;
     justify-content: center;
+
 }
 .cards-container {
     max-width: 69rem;
@@ -41,7 +42,14 @@
     &:has(.bottom-wrapper) {
         min-width: 20rem;
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.06));
-        box-shadow: 0 0.25rem 0.25rem -0.25rem rgba(0, 0, 0,0.8);
+        //box-shadow: 0 0.25rem 0.25rem -0.25rem rgba(0, 0, 0,0.8);
+    }
+}
+.queued-customers {
+    li:last-of-type {
+        .card {
+            box-shadow: 0 0.25rem 0.25rem -0.25rem rgba(0, 0, 0,0.8);
+        }
     }
 }
 ul {

@@ -9,9 +9,13 @@
         "balance": "$4,844.13",
         "web": true,
         "kiosk": false,
-        "products": [ "4X6 prints"],
+        "products": [{
+            "type": "4X6 prints",
+            "quantity": 5
+        }],
         "allocatedPrinters":  ["DL650-A1"],
-        "isQueued": true
+        "isQueued": true,
+        "isCompleted": false
     },
     {
         "id": 2,
@@ -23,9 +27,17 @@
         "balance": "$656.24",
         "web": false,
         "kiosk": true,
-        "products": [ "11X14 Canvas", "5X7 Mounted Print"],
+        "products": [{
+            "type": "11X14 Canvas",
+            "quantity": 5
+        }, 
+        {
+            "type": "5X7 Mounted Print",
+            "quantity": 2
+        }],
         "allocatedPrinters":  ["DL650-A1", "P6000", "CX3240"],
-        "isQueued": true
+        "isQueued": true,
+        "isCompleted": false
     },
     {
         "id": 3,
@@ -37,9 +49,13 @@
         "balance": "$4,242.36",
         "web": false,
         "kiosk": true,
-        "products": ["4X6 Prints"],
+        "products": [{
+            "type": "4X6 prints",
+            "quantity": 1
+        }],
         "allocatedPrinters":  ["DL650-A2", "P6000"],
-        "isQueued": true
+        "isQueued": true,
+        "isCompleted": false
     },
     {
         "id": 4,
@@ -51,9 +67,13 @@
         "balance": "$6,535.26",
         "web": true,
         "kiosk": false,
-        "products": ["5X7 Mounted Print"],
+        "products": [{
+            "type": "5X7 Mounted Print",
+            "quantity": 1
+        }],
         "allocatedPrinters":  ["CX3240"],
-        "isQueued": false
+        "isQueued": false,
+        "isCompleted": false
     },
     {
         "id": 5,
@@ -65,9 +85,13 @@
         "balance": "$5,159.88",
         "web": true,
         "kiosk": false,
-        "products": [ "11X14 Canvas"],
+        "products": [{
+            "type": "11X14 Canvas",
+            "quantity": 2
+        }],
         "allocatedPrinters":  ["P6000"],
-        "isQueued": false
+        "isQueued": false,
+        "isCompleted": false
     },
     {
         "id": 6,
@@ -79,9 +103,17 @@
         "balance": "$4,602.50",
         "web": true,
         "kiosk": false,
-        "products": [ "11X14 Canvas", "16X20 Poster"],
+        "products": [{
+            "type": "11X14 Canvas",
+            "quantity": 5
+        }, 
+        {
+            "type": "16X20 Poster",
+            "quantity": 7
+        }],
         "allocatedPrinters":  ["FF680"],
-        "isQueued": false
+        "isQueued": false,
+        "isCompleted": false
     },
     {
         "id": 7,
@@ -93,9 +125,13 @@
         "balance": "$4,600",
         "web": false,
         "kiosk": true,
-        "products": ["16X20 Poster"],
+        "products": [{
+            "type": "16X20 Poster",
+            "quantity": 4
+        }],
         "allocatedPrinters":  ["FF680"],
-        "isQueued": false
+        "isQueued": false,
+        "isCompleted": false
     },
     {
         "id": 8,
@@ -107,12 +143,16 @@
         "balance": "$4,60",
         "web": false,
         "kiosk": true,
-        "products": ["16X20 Poster"],
+        "products": [{
+            "type": "16X20 Poster",
+            "quantity": 7
+        }],
         "allocatedPrinters":  ["FF680"],
-        "isQueued": false
+        "isQueued": false,
+        "isCompleted": false
     },
     {
-        "id": 8,
+        "id": 9,
         "first": "Jason",
         "last": "Justice",
         "email": "Jason.Justice@jesse.net",
@@ -121,9 +161,52 @@
         "balance": "$4,690",
         "web": true,
         "kiosk": false,
-        "products": ["16X20 Poster"],
+        "products": [{
+            "type": "11X14 Canvas",
+            "quantity": 1
+        }, 
+        {
+            "type": "16X20 Poster",
+            "quantity": 3
+        }],
         "allocatedPrinters":  ["FF680"],
-        "isQueued": false
+        "isQueued": false,
+        "isCompleted": true
+    },
+    {
+        "id": 10,
+        "first": "Danny",
+        "last": "Petrilli",
+        "email": "Danny.Petrilli@jesse.net",
+        "address": "7451 Wake Field",
+        "due": "June 3, 2023",
+        "balance": "$4,69",
+        "web": true,
+        "kiosk": false,
+        "products": [{
+            "type": "11X14 Canvas",
+            "quantity": 1
+        }],
+        "allocatedPrinters":  ["P6000"],
+        "isQueued": false,
+        "isCompleted": true
+    },
+    {
+        "id": 11,
+        "first": "Ryan",
+        "last": "Justice",
+        "email": "Ryan.Justice@jesse.net",
+        "address": "123 Verde Estate",
+        "due": "August 3, 2023",
+        "balance": "$5, 059.88",
+        "web": true,
+        "kiosk": false,
+        "products": [{
+            "type": "11X14 Canvas",
+            "quantity": 10
+        }],
+        "allocatedPrinters":  ["P6000"],
+        "isQueued": false,
+        "isCompleted": true
     }
-
 ]

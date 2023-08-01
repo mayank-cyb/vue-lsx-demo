@@ -17,13 +17,13 @@
 <script>
 import fetchPrintersList from '@/utils/printersList';
 import Printer from './Printer.vue';
-import Customer from './Customer.vue';
-import TheProgressBar from './TheProgressBar.vue';
+import Order from '@/components/Order.vue';
+import TheProgressBar from '@/components/TheProgressBar.vue';
 
 export default {
     components: {
     Printer,
-    Customer,
+    Order,
     TheProgressBar
 },
     data() {
@@ -55,7 +55,7 @@ export default {
     methods: {
         sendFillToCustomer({fill}) {
             this.fill= fill;
-            console.log("In PrinterGrid.vue", fill);
+            //console.log("In PrinterGrid.vue", fill);
             this.$emit('send-fill-status', {
                 fill
             });
@@ -65,7 +65,7 @@ export default {
         }
     },
     unmounted() {
-        console.log("unmounted PrinterGrid.vue");
+        //console.log("unmounted PrinterGrid.vue");
         clearInterval(this.intervalId);
     }
 }

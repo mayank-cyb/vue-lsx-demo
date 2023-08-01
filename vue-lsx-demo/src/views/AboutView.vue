@@ -1,21 +1,24 @@
 <template>
   <div class="about">
-    <QueuedCustomers />
-    <Customers />
+    <SearchBar />
+    <QueuedOrders />
+    <Orders />
   </div>
 </template>
 <script>
   import TheProgressBar from '@/components/TheProgressBar.vue';
-  import QueuedCustomers from '@/components/QueuedCustomers.vue';
-  import Customers from '@/components/Customers.vue';
-  import PrinterGrid from '@/components/PrinterGrid.vue';
+  import QueuedOrders from '@/components/QueuedOrders.vue';
+  import Orders from '@/components/Orders.vue';
+  import PrinterGrid from '@/components/Printer/PrinterGrid.vue';
+  import SearchBar from '@/components/SearchBar.vue';
 
   export default {
     components: {
       TheProgressBar,
-      Customers,
+      Orders,
       PrinterGrid,
-      QueuedCustomers
+      QueuedOrders,
+      SearchBar
     },
 
   }

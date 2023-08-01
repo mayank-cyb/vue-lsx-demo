@@ -1,5 +1,5 @@
 .cards,
-.customer {
+.order {
     display: flex;
     gap: 1rem;
     justify-content: flex-start;
@@ -9,7 +9,7 @@
         padding: 2rem 6rem;
     }
 }
-.customer  {
+.order  {
     margin: 0 auto;
     justify-content: center;
 
@@ -44,8 +44,14 @@
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.06));
         //box-shadow: 0 0.25rem 0.25rem -0.25rem rgba(0, 0, 0,0.8);
     }
+    &-long {
+        max-width: 90%;
+        min-height: 4rem;
+        display: flex;
+        gap: 2rem;
+    }
 }
-.queued-customers {
+.queued-orders {
     li:last-of-type {
         .card {
             box-shadow: 0 0.25rem 0.25rem -0.25rem rgba(0, 0, 0,0.8);

@@ -1,12 +1,12 @@
 <template>
     <div class="cards-container">
-        <h2>{{ noWaitingCustomers }} waiting</h2>
+        <h2>{{ noWaitingOrders }} waiting</h2>
         <ul class="cards">
             <li
-                v-for="printDatum in waitingCustomers" 
+                v-for="printDatum in waitingOrders" 
                 :key="printDatum.id"
             >
-            <Customer
+            <Order
                 :cardData="printDatum"
             />
             </li>
@@ -16,11 +16,11 @@
 
 <script>
 import printData from "@/data"
-import Customer from "./Customer.vue"
+import Order from "./Order.vue"
 export default {
-    name: 'Cards',
+    name: 'Orders',
     components: {
-        Customer
+        Order
     },
     data() {
         return {
@@ -28,11 +28,11 @@ export default {
         }
     },
     computed: {
-        waitingCustomers() {
-            return this.printData.filter(customer => !customer.isQueued);
+        waitingOrders() {
+            return this.printData.filter(order => !order.isQueued && !order.isCompleted);
         },
-        noWaitingCustomers() {
-            return this.waitingCustomers.length
+        noWaitingOrders() {
+            return this.waitingOrders.length
         }
     },
 }

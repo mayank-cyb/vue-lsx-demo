@@ -1,5 +1,5 @@
 <template>
-    <div class="customer">
+    <div class="order">
         <div class="card">
             <div class="btn-wrapper">
                 <OrderMode>
@@ -16,7 +16,7 @@
                 </OrderMode>
                 <button class="btn btn-express">Express</button>
             </div> 
-            <div :class="isQueued? 'bottom-wrapper' : null">
+            <div :class="isQueued && !isCompleted? 'bottom-wrapper' : null">
                 <div class="left-section">
                 <h2 class="name">{{ fullName }}</h2>
                 <p class="due-date">Due: {{ data.due }}</p>
@@ -27,7 +27,7 @@
                         v-for="(product, index) in data.products"
                         :key="`product-${index}`"
                     >
-                        {{ product }}
+                        {{ product.type }}
                     </li>
                 </ul>
                 </div>
@@ -40,14 +40,14 @@
                 </template>
             </div>
         </div>
-        <slot name="queuedCustomer"></slot>
+        <slot name="queuedOrder"></slot>
     </div>
 </template>
 
 <script>
 import OrderMode from "./OrderMode.vue";
 export default {
-    name: 'Card',
+    name: 'Order',
     components : {
         OrderMode
     },
@@ -77,10 +77,16 @@ export default {
         isQueued: {
             type: Boolean,
             default: false
+        },
+        isCompleted: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {
         fullName() {
+            console.log("this data", this.data)
+            //return this.data;
             return this.data.first + ' ' + this.data.last
         },
         status() {

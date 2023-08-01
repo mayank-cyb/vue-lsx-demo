@@ -1,9 +1,12 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+  import QueuedOrders from '@/components/QueuedOrders.vue';
+  import Orders from '@/components/Orders.vue';
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <QueuedOrders />
+    <Orders />
+  </div>
+
 </template>

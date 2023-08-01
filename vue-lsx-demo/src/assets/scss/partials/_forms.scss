@@ -1,0 +1,42 @@
+form {
+
+}
+
+input {
+    font-size: 2rem;
+    font-weight: $semiBold;
+    padding: 0.5rem 1rem;
+} 
+
+button,
+.button,
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    min-width: 12rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    &:focus {
+        border: none;
+    }
+    &.btn-express {
+        display: inline-flex;
+        height: 1.5rem;
+        border-radius: 1.5rem;
+        border: 0.125rem solid $skyBlue;
+        color: $skyBlue;
+        padding: 0.5rem;
+        min-width: auto
+    }
+    &.btn-icon {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+    &.btn-search {
+        padding: 0;
+        min-width: auto;
+    }
+}

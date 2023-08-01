@@ -1,0 +1,36 @@
+.fa{
+    &-magnifying-glass {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        background-color: $steelBlue;
+        fill: $white;
+        path {
+            fill: $white; 
+        }
+    }
+}
+[class*="fa"] {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.bg-blue {
+    color: $white;
+    path {
+        fill: $white;
+    }
+}
+
+.btn-icon {
+    display: inline-flex;
+    padding: 0;
+    min-width: auto;
+    .bg-blue & {
+        color: $white;
+    }
+}

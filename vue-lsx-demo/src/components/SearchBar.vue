@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <input type="text" v-model="searchText" @input="searchByCustomerName"/>
-        <font-awesome-icon :icon="['fas', 'search']" />
-        {{ getQueuedOrdersLength }} Active Orders
-        <!--QueuedOrders /-->
-        <h3>Completed Orders</h3>
+    <div class="search-wrapper">
+        <div class="search-bar">
+            <input type="text" name="search" v-model="searchText" @input="searchByCustomerName"/>
+            <SearchButton />
+        </div>
+        <h2>{{ getQueuedOrdersLength }} Active {{ getQueuedOrdersLength > 1 ? 'Orders': 'Order' }}</h2>
+        <QueuedOrders :search-queued-order="getQueuedOrders"/>
+        <h3>{{ getCompletedOrdersLength }} Completed {{ getCompletedOrdersLength > 1 ? 'Orders': 'Order' }}</h3>
         <ul class="completed-orders">
             <li v-for="order in getCompletedOrders"
                 :key="`order-${order-id}`"
@@ -21,11 +23,13 @@
 import orderData from "@/data.json";
 import CompletedOrder from "./CompletedOrder.vue";
 import QueuedOrders from "./QueuedOrders.vue";
+import SearchButton from './buttons/SearchButton.vue';
 export default {
     name: 'SearchBar',
     components: {
     CompletedOrder,
-    QueuedOrders
+    QueuedOrders,
+    SearchButton
 },
     data() {
         return {
@@ -41,6 +45,9 @@ export default {
         getCompletedOrders() {
             console.log(this.filteredOrders.filter(order => order.isCompleted));
             return this.filteredOrders.filter(order => order.isCompleted)
+        },
+        getCompletedOrdersLength() {
+            return this.getCompletedOrders.length;
         },
         getQueuedOrders() {
             return this.filteredOrders.filter(order => order.isQueued)

@@ -1,5 +1,5 @@
 <template>
-    <div class="queued-orders--wrapper">
+    <div class="queued-orders__wrapper">
         <ul class="queued-orders">
             <li                 
                 v-for="order in queuedOrders" 
@@ -36,8 +36,17 @@ export default {
             fill: 0
         }
     },
+    props: {
+        searchQueuedOrder: {
+            type: Object,
+            required: false
+        }
+    },
     computed: {
         queuedOrders() {
+            if(this.searchQueuedOrder) {
+               return  this.searchQueuedOrder;
+            }
             return this.printData.filter(order => order.isQueued);
         }
     },

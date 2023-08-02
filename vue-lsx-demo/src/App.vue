@@ -14,7 +14,8 @@ import { RouterLink, RouterView } from 'vue-router'
       </div>
     </header>
     <aside>
-      <SideNavigation />
+      <SideNavigation @click="updateSliderNavigationState" />
+      <slider-navigation :sliderShow="sliderShow" @click="updateSliderNavigationState"/>
     </aside>
     <main>
       <RouterView />
@@ -23,9 +24,29 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 <script>
   import SideNavigation from './components/SideNavigation.vue';
+  import SliderNavigation from './components/SliderNavigation.vue';
+  import { mapGetters, mapActions } from 'vuex';
+
   export default {
     components: {
-      SideNavigation
+      SideNavigation,
+      SliderNavigation
+    },
+    data() {
+      return {
+        sliderShow: false,
+      }
+    },
+    computed: {
+      ...mapGetters(['sliderShowStatus']),
+    }, 
+    methods: {
+      ...mapActions(['updateSliderShow']),
+      updateSliderNavigationState() {
+        //this.updateSliderShow();
+        this.sliderShow = !this.sliderShow;
+        console.log("sliderShow", this.sliderShowStatus);
+      }
     }
   }
 </script>

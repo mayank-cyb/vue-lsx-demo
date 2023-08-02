@@ -8,6 +8,7 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
+  <div>
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
@@ -73,14 +74,15 @@ import SupportIcon from './icons/IconSupport.vue'
     twitter account for latest news in the Vue world.
   </WelcomeItem>
 
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
+    <WelcomeItem>
+      <template #icon>
+        <SupportIcon />
+      </template>
+      <template #heading>Support Vue</template>
 
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
+      As an independent project, Vue relies on community backing for its sustainability. You can help
+      us by
+      <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
+    </WelcomeItem>
+    </div>
 </template>

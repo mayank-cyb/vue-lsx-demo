@@ -3,25 +3,40 @@
         <ul class="navigation-links">
             <li>
                 <router-link to="/orders">
-                    <OrderButton />
+                    <ButtonOrder />
                 </router-link>
             </li>
             <li>
                 <router-link to="/kiosk">
-                    <KioskButton />
+                    <ButtonKiosk />
                 </router-link>
+            </li>
+            <li>
+                <router-link to="#">
+                    <ButtonLink @click="clickHandler"/>
+                </router-link>
+
             </li>
         </ul>
     </nav>
 </template>
 
 <script>
-import OrderButton from './buttons/OrderButton.vue'
-import KioskButton from './buttons/KioskButton.vue'
+import ButtonOrder from './buttons/ButtonOrder.vue'
+import ButtonKiosk from './buttons/ButtonKiosk.vue'
+import ButtonLink from './buttons/ButtonLink.vue'
 export default {
+    emits: ['click'],
     components: {
-        OrderButton,
-        KioskButton
+        ButtonOrder,
+        ButtonKiosk,
+        ButtonLink
+    },
+    methods: {
+        clickHandler() {
+            console.log("Click from Side Navigation");
+            this.$emit('click');
+        }
     }
 }
 </script>

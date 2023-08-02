@@ -2,7 +2,7 @@
     <div class="search-wrapper">
         <div class="search-bar">
             <input type="text" name="search" v-model="searchText" autocomplete />
-            <SearchButton @click="searchByCustomerName" />
+            <ButtonSearch @click="searchByCustomerName" />
         </div>
         <h2>{{ getQueuedOrdersLength }} Active {{ getQueuedOrdersLength > 1 ? 'Orders': 'Order' }}</h2>
         <QueuedOrders :search-queued-order="getQueuedOrders"/>
@@ -23,13 +23,13 @@
 import orderData from "@/data.json";
 import CompletedOrder from "./CompletedOrder.vue";
 import QueuedOrders from "./QueuedOrders.vue";
-import SearchButton from './buttons/SearchButton.vue';
+import ButtonSearch from './buttons/ButtonSearch.vue';
 export default {
     name: 'SearchBar',
     components: {
     CompletedOrder,
     QueuedOrders,
-    SearchButton
+    ButtonSearch
 },
     data() {
         return {

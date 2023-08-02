@@ -1,8 +1,8 @@
 <template>
     <div class="search-wrapper">
         <div class="search-bar">
-            <input type="text" name="search" v-model="searchText" @input="searchByCustomerName"/>
-            <SearchButton />
+            <input type="text" name="search" v-model="searchText" autocomplete />
+            <SearchButton @click="searchByCustomerName" />
         </div>
         <h2>{{ getQueuedOrdersLength }} Active {{ getQueuedOrdersLength > 1 ? 'Orders': 'Order' }}</h2>
         <QueuedOrders :search-queued-order="getQueuedOrders"/>

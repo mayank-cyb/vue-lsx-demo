@@ -1,27 +1,30 @@
 <template>
     <div 
-        class="slider-navigation"
+        class="slider-navigation bg-blue"
         :class="sliderShow ? 'slideRight' : 'slideLeft'"
     >
-        <button-chevron isIcon @click="toggleSliderClass" />
-        <ul>
+        <span class="fontXLarge">
+            Links 
+        </span>
+        <button-chevron isIcon @click="toggleSliderClass" class="btn-chevron" />
+        <ul class="slider-navigation__links">
             <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">Port</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Port</a>
             </li>
             <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">One Wallmart</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">One Wallmart</a>
             </li>
             <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">Service Portal</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Service Portal</a>
             </li>
             <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">Yes Video</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Yes Video</a>
             </li>
             <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">Order Status</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Order Status</a>
             </li>
             <li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">Marketing</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Marketing</a>
             </li>
         </ul>
     </div>
@@ -48,7 +51,7 @@ export default {
         toggleSliderClass() {
             //this.slideRight = !this.sliderShow;
             //this.updateSliderShow();
-            console.log("in toggle slider class", this.sliderShowStatus);
+            console.log("in toggle slider class");
             this.$emit('click');
         },
     }

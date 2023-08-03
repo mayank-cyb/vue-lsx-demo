@@ -1,10 +1,14 @@
+$sidebarWidth: 8rem;
+$sliderNavigationWidth: 14rem;
+$widthDifference: 14rem - 8rem;
+
 aside {
     background-color: $steelBlue;
     position: fixed;
     left: 0;
     top: 0;
-    bottom: 25%;
-    width: 8rem;
+    bottom: 0;
+    width: $sidebarWidth;
 
 }
 .sidebar {
@@ -49,14 +53,46 @@ aside {
     right: 0;
     top: 0;
     bottom: 0;
+    width: 14rem;
     background-color: $skyBlue;
-    padding: 2rem;
+    color: $white;
+    box-sizing: border-box;
+    padding: 4rem 2rem;
     transform: translate3d(-100%, 0, 0);
     transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
     &.slideRight {
-        transform: translate3d(100%, 0, 0);
+        transform: translate3d(calc(100% - $widthDifference), 0, 0);
     }
     &.slideLeft {
         transform: translate3d(-100%, 0, 0);
     }
+    &__links {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 1rem;
+        color: $white;
+    }
+    .fontXLarge {
+        letter-spacing: -0.08rem;
+        margin-bottom: 2rem;
+    }
+    a {
+        text-decoration: none;
+        font-weight: $semiBold;
+        &:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+}
+.btn-chevron {
+    position: absolute;
+    top:  2rem;
+    right: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    background-color: steelblue;
+
 }

@@ -19,10 +19,18 @@
     margin-bottom: 0.25rem;
 }
 
+.fa-chevron-left {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
 .bg-blue {
     color: $white;
     path {
         fill: $white;
+    }
+    a {
+        color: $white;
     }
 }
 

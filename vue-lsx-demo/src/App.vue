@@ -45,7 +45,7 @@ import { RouterLink, RouterView } from 'vue-router'
       updateSliderNavigationState() {
         //this.updateSliderShow();
         this.sliderShow = !this.sliderShow;
-        console.log("sliderShow", this.sliderShowStatus);
+        //console.log("sliderShow", this.sliderShowStatus);
       }
     }
   }

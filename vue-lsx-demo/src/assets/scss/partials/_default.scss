@@ -19,6 +19,9 @@ header {
 aside {
     position: relative;
 }
+span {
+    display: inline-block;
+}
 .green {
     color: $green;
 }
@@ -28,4 +31,8 @@ aside {
 
 .logo {
     margin: 0 auto;
+}
+.fontXLarge {
+    font-size: 2.5rem;
+    font-weight: $semiBold;
 }

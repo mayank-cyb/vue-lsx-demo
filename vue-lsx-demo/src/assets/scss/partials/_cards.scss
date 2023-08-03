@@ -12,6 +12,9 @@
 .order  {
     margin: 0 auto;
     justify-content: center;
+    .orders-summary & {
+        justify-content: flex-start;
+    }
 
 }
 .cards-container {

@@ -1,5 +1,8 @@
+@use 'sass:math';
+
 @import "@/assets/scss/partials/_reset.scss";
 @import "@/assets/scss/partials/_variables.scss";
+@import "@/assets/scss/partials/_mixins.scss";
 @import "@/assets/scss/partials/_default.scss";
 @import "@/assets/scss/partials/_forms.scss";
 @import "@/assets/scss/partials/_progressBar.scss";

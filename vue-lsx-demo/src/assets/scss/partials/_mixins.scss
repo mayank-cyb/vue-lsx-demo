@@ -1,0 +1,23 @@
+$base-font-size:  16px;
+@function toRems($font-size) {
+    @return math.div($font-size, $base-font-size) * 1rem;
+}
+
+
+@mixin small {
+    @media only screen and (min-width: 320px) and  (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media only screen and (min-width: 768px) and  (max-width: 1980px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media only screen and (min-width: 1981px) {
+        @content;
+    }
+}

@@ -1,10 +1,17 @@
+
+html,
+body {
+    @include medium {
+        font-size: 0.8333334vw;
+    }
+}
 body {
     font-family: $fontMontserrat;
-    padding: 0 10rem;
+    padding: 0 toRems(160px);
 }
 h2,
 h3 {
-    font-size: 1rem;
+    font-size: toRems(16px);
     font-weight: $semiBold;
     padding: 0 0 .25rem;
 }
@@ -13,7 +20,7 @@ p {
 }
 header {
     text-align: center;
-    margin: 2rem auto;
+    margin: toRems(32px) auto;
     padding-left: 8rem;
 }
 aside {
@@ -33,6 +40,6 @@ span {
     margin: 0 auto;
 }
 .fontXLarge {
-    font-size: 2.5rem;
+    font-size: toRems(40px);
     font-weight: $semiBold;
 }

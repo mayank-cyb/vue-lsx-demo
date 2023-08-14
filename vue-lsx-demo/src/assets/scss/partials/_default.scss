@@ -29,6 +29,9 @@ aside {
 span {
     display: inline-block;
 }
+.content {
+    padding: toRems(32px) toRems(16px);
+}
 .green {
     color: $green;
 }

@@ -29,7 +29,6 @@ export default {
                 return this.order.products.reduce((accumulator, currentValue) => accumulator.quantity + currentValue.quantity);
             }
             return this.order.products[0].quantity;
-
         }
     },
 }

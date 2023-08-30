@@ -3,10 +3,8 @@
         <h2>{{ fullName }}</h2>
         <p>{{ order.id }}</p>
         <div class="product-quantity">
-            <h3>Products</h3>
             <p>{{ productTotalQuantity }}</p>
         </div>
-
     </div>
 </template>
 

@@ -22,7 +22,7 @@
 <script>
 import printData from "@/data";
 import PrinterGrid from "./Printer/PrinterGrid.vue";
-import Order from "./Order.vue";
+import Order from '@/components/Order.vue';
 
 export default {
     name: 'QueuedOrder',

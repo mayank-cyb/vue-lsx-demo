@@ -1,23 +1,32 @@
+
 <template>
-    <div class="search-wrapper">
-        <div class="search-bar">
-            <input type="text" name="search" v-model="searchText" autocomplete />
-            <ButtonSearch @click="searchByCustomerName" />
-        </div>
-        <h2>{{ getQueuedOrdersLength }} Active {{ getQueuedOrdersLength > 1 ? 'Orders': 'Order' }}</h2>
-        <QueuedOrders :search-queued-order="getQueuedOrders"/>
-        <h3>{{ getCompletedOrdersLength }} Completed {{ getCompletedOrdersLength > 1 ? 'Orders': 'Order' }}</h3>
-        <ul class="completed-orders">
-            <li v-for="order in getCompletedOrders"
-                :key="`order-${order-id}`"
-            >
-                <CompletedOrder 
-                    :order="order"
-                />
-            </li>
-        </ul>
+    <div>
+        <template v-if="$route.name.includes('completed') || $route.name.includes('active')">
+            <router-view />
+        </template>
+        <template v-else>
+            <div class="search-wrapper">
+                <div class="search-bar">
+                    <input type="text" name="search" v-model="searchText" autocomplete @keydown.enter="searchByCustomerName" />
+                    <ButtonSearch @click="searchByCustomerName"  />
+                </div>
+                <h2>{{ getQueuedOrdersLength }} Active {{ getQueuedOrdersLength > 1 ? 'Orders': 'Order' }}</h2>
+                <QueuedOrders :search-queued-order="getQueuedOrders"/>
+                <h3>{{ getCompletedOrdersLength }} Completed {{ getCompletedOrdersLength > 1 ? 'Orders': 'Order' }}</h3>
+                <ul class="completed-orders">
+                    <li v-for="order in getCompletedOrders"
+                        :key="`order-${order-id}`"
+                    >
+                        <CompletedOrder 
+                            :order="order"
+                        />
+                    </li>
+                </ul>
+            </div>
+        </template> 
     </div>
 </template>
+
 
 <script>
 import orderData from "@/data.json";

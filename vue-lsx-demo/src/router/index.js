@@ -20,7 +20,21 @@ const router = createRouter({
     {
       path: '/orders',
       name: 'orders',
-      component: () => import('../views/OrdersSummary.vue')
+      component: () => import('../views/OrdersSummary.vue'),
+      children: [
+        {
+          path: "active",
+          name: "active",
+          component: () => import('../views/HomeView.vue'),
+  
+        },
+        {
+          path: "completed",
+          name: "completed",
+          component: () => import('../components/CompletedOrders.vue'),
+  
+        }
+      ]
     },
     {
       path: '/kiosk',

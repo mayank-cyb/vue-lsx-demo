@@ -8,7 +8,7 @@
 import Button from './Button.vue';
 export default {
     emits: ['click'],
-    name: 'ChevronButton',
+    name: 'ButtonChevron',
     components: {
         Button
     },

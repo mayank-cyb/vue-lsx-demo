@@ -16,22 +16,41 @@ aside {
 }
 
 .navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     &-links {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
-        margin: 3rem auto;
+        //gap: 2rem;
+        margin: 0;
+    }
+    &-links__top {
+        margin-top: toRems(100px);
+    }
+    &-links__bottom {
+        margin-bottom: toRems(100px);
+        border-top: toRems(2px) solid $white;
     }
     li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: toRems(90px);
+
+        // gap: toRems(73px);
         &:has(.active) {
+            position: relative;
             //border-left: 0.25rem solid $skyBlue;
-            display: flex;
-            justify-content: flex-start;
-            gap: calc(50% - 0.5rem);
+
             width: 100%;
+
             &::before {
+                position: absolute;
+                left: 0;
                 content: '';
                 width: 0.5rem;
                 min-height: 100%;
@@ -39,10 +58,6 @@ aside {
             }
     
         }
-
-    }
-    .active {
-        transform: translateX(-50%);
 
     }
 }
@@ -93,6 +108,25 @@ aside {
     height: 1.5rem;
     border-radius: 100%;
     font-size: 1.5rem;
-    background-color: steelblue;
+    background-color: $steelBlue;
 
+}
+.navigation-links {
+    a {
+        display: flex;
+        font-size: toRems(14px);
+        line-height: toRems(14px);
+        font-weight: $medium;
+        letter-spacing: toRems(-0.14px);
+        text-decoration: none;
+        height: 100%;
+        &.active {
+            font-weight: $bold;
+        }
+    }
+    .active {
+        button {
+            font-weight: $bold;
+        }   
+    }
 }

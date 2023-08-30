@@ -8,7 +8,7 @@
 <script>
 import Button from './Button.vue';
 export default {
-    name: 'KioskButton',
+    name: 'ButtonKiosk',
     components: {
         Button
     }

@@ -7,7 +7,7 @@
 <script>
 import Button from './Button.vue';
 export default {
-    name: 'SearchButton',
+    name: 'ButtonSearch',
     components: {
         Button
     }

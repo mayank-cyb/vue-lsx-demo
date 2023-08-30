@@ -1,4 +1,4 @@
-.fa{
+.fa {
     &-magnifying-glass {
         display: inline-flex;
         justify-content: center;
@@ -15,7 +15,7 @@
     }
 }
 [class*="fa"] {
-    font-size: 2rem;
+    font-size: toRems(29px);
     margin-bottom: 0.25rem;
 }
 
@@ -26,7 +26,7 @@
 
 .bg-blue {
     color: $white;
-    path {
+    svg {
         fill: $white;
     }
     a {
@@ -41,6 +41,7 @@
     .bg-blue & {
         color: $white;
     }
+
 }
 .btn-chevron {
     transition: box-shadow cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
@@ -48,3 +49,4 @@
         box-shadow: 0 0 0 0.25rem $steelBlue;
     }
 }
+

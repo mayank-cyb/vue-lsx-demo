@@ -2,7 +2,6 @@
     <div class="orders-summary">
         <SearchBar />
     </div>
-
 </template>
 
 <script>
